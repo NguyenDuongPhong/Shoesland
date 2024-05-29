@@ -2,8 +2,7 @@
 $severname = "localhost";
 $username = "root";
 $password = "";
-$database = "shop";
-
+$database = "shoeslandshop";
 $connect = new mysqli($severname, $username, $password, $database);
 
 if (mysqli_connect_errno()) {
