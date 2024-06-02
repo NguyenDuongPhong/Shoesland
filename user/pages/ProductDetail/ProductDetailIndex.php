@@ -235,7 +235,7 @@ $time_left_formatted = sprintf('%d Ngày %d Giờ %d Phút %d Giây', $days, $ho
                     ?>
                         <div class="p-1">
                             <label class="btn btn-outline-success size-btn">
-                                <?php echo  $size_name; ?>
+                                <?php echo preg_replace('/\D/', '', $size_name); ?>
                                 <input type="hidden" name="selectedSize" value="<?php echo $size_id; ?>">
                             </label>
                         </div>
@@ -328,7 +328,7 @@ $time_left_formatted = sprintf('%d Ngày %d Giờ %d Phút %d Giây', $days, $ho
             <div class="seller-info flex-center">
                 <a style="text-decoration: none;" href="#" class="">
                     <img height="44" width="44" alt="" class="" src="./images/logo.svg" style="width: 44px;"><noscript><img height="44" width="4" alt="" class="WebpImg__StyledImg-sc-h3ozu8-0 fWjUGo logo" src="/wp-content/uploads/2022/09/PNG-1.png" style="width: 44px;" /></noscript>
-                    <span>LuxuryShop</span>
+                    <span>Shoes Land</span>
                     <div class="flex-center">
                         <span class="">
                             <img height="18" width="74" alt="" class="" src="./images/official.png" style="width: 74px; height: 18px;"><noscript><img height="18" width="74" alt="" class="WebpImg__StyledImg-sc-h3ozu8-0 fWjUGo badge-img" src="/wp-content/uploads/2022/06/offcial-i.png" style="width: 74px; height: 18px;" /></noscript>

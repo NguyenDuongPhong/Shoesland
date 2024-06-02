@@ -35,19 +35,19 @@ function GuiMail($email, $content, $username) {
     require 'PHPMailer-master/src/Exception.php'; 
     
     $mail = new PHPMailer\PHPMailer\PHPMailer(true); // true: enables exceptions
-    $mail->SMTPDebug = 0; // 0,1,2: chế độ debug. khi chạy ngon thì chỉnh lại 0 nhé
+    $mail->SMTPDebug = 2; // 0,1,2: chế độ debug. khi chạy ngon thì chỉnh lại 0 nhé
     $mail->isSMTP();  
     $mail->CharSet  = "utf-8";
     $mail->Host = 'smtp.gmail.com';  // SMTP servers
     $mail->SMTPAuth = true; // Enable authentication
-    $mail->Username = 'luxuryshopTTCN@gmail.com'; // SMTP username
-    $mail->Password = 'ihta rouk cqvv ewbd';   // SMTP password
+    $mail->Username = 'shopshoesland@gmail.com'; // SMTP username
+    $mail->Password = 'ktnr mdiu ccwp pvzg';   // SMTP password
     $mail->SMTPSecure = 'ssl';  // encryption TLS/SSL 
     $mail->Port = 465;  // port to connect to                
-    $mail->setFrom('shopshoesland@gmail.com', 'LuxuryShop'); 
+    $mail->setFrom('shopshoesland@gmail.com', 'ShoesLandShop'); 
     $mail->addAddress($email, $username); // mail và tên người nhận  
     $mail->isHTML(true);  // Set email format to HTML
-    $mail->Subject = 'Shop quần áo Luxury kính gửi bạn!';
+    $mail->Subject = 'Shop giày ShoesLand kính gửi bạn!';
     $noidungthu = 'Đơn hàng của bạn'; 
     $mail->Body = $content;
     $mail->smtpConnect( array(
@@ -60,6 +60,7 @@ function GuiMail($email, $content, $username) {
     $mail->send();
 }
 ?>
+
 <?php
 if (isset($_POST['confirm'])) {
     ob_start(); 
@@ -143,8 +144,8 @@ if (isset($_POST['confirm'])) {
 </div>";
 
     GuiMail($email, $content, $username);
-    header('Location: ../../user/userCommon/UserIndex.php?usingPage=mail');
-
+    header('Location:../../user/pages/Payment/ConfirmEmail.php');
+    
     
     ob_end_flush();
 }

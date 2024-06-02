@@ -27,6 +27,12 @@ function generateCode()
 
 include('../../common/config/Connect.php');
 
+//Handle login with google
+include('../../common/GoogleLogin.php');
+
+
+//Handle login with fb
+include('../../common/facebook_source.php');
 
 $username = '';
 $password  = '';
@@ -119,7 +125,7 @@ if (isset($_POST['login']) && isset($_POST['username']) && isset($_POST['passwor
 <html lang="en">
 
 <head>
-    <title>LuxuryShop</title>
+    <title>SHOESLAND</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" href="./images/logo.svg">
@@ -194,7 +200,7 @@ if (isset($_POST['login']) && isset($_POST['username']) && isset($_POST['passwor
                         <?php } ?>
 
                     </div>
-            
+                    <span> Hoặc đăng nhập bằng tài khoản sẵn có</span>
                     <label>
                         <input required name="username" type="text" placeholder="Tên tài khoản" />
                     </label>
